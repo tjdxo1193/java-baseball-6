@@ -1,10 +1,9 @@
 # 테스트 코드 목록 작성
 
-## 클래스별 단위 테스트
+## 단위 테스트
+- (고전파 방식의 테스트 코드 작성)
 
-- 클래스별로 각 테스트 코드를 짜고, 객체간에 메세지를 주고 받는 부분은 그 다음 작성할 예정이다. (인터페이스는 제외한다.)
-
-baseball_oop
+baseball_oop 프로젝트 구조
 - game
   - BaseBallGame
 - participant
@@ -23,30 +22,30 @@ baseball_oop
 - Application
 
 ### BaseBallGame
-- start
-  - 
-- play
-- askReplay
-- gameEnd
-- selectInputToPlayer
-- printHint
-- 
+
 
 ### Hitter
+- 메세지에 대한 처리가 잘 이루어지는지 체크
 
 ### Umpire
+- 메세지에 대한 처리가 잘 이루어지는지 체크
 
 ### Pitcher
+- 메세지에 대한 처리가 잘 이루어지는지 체크
 
 ### ExceptionMessage
+- 불변객체이기 때문에 X
 
-## ReplayOrNot
+### ReplayOrNot
+- 불변객체이기 때문에 X
 
-## Answer
-- 생성자 파라미터 x -> 랜덤한값의 숫자 생성
-  - 1_9의 랜덤한값이 생성되는가
-  - 길이가_3인가
-  - 
-## Result
+### Answer
+- 값 유효성체크하는 부분 & 같은 숫자 같은 자리 카운트하는 메서드만 테스트 코드 작성
+- 랜덤한 값을 생성에 대한 테스트 코드는 그 API를 믿고 사용한 것이기 때문에 작성할 필요x
+- Set으로 중복값을 제외하며 생성하는 부분도 Set이라는 자료구조를 신뢰하지 않는게 아니기 때문에 작성할 필요X
 
-## Application
+### Result
+- 불견객체이기 때문에 X
+
+### Application
+- 통합테스트
