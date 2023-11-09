@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class Answer {
-    List<Integer> values = new ArrayList<>();
+    private List<Integer> values = new ArrayList<>();
     private final static int LENGTH_LIMIT = 3;
 
     public Answer() {
