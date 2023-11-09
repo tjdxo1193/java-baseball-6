@@ -12,25 +12,33 @@ public class Answer {
     private final static int LENGTH_LIMIT = 3;
 
     public Answer() {
-        Set<Integer> set = new HashSet<>();
-        while (set.size() < LENGTH_LIMIT) {
-            set.add(pickNumberInRange(1, 9));
-        }
-        this.values = set.stream().toList();
+        this.values = createRandomIntegerListLimitNum();
     }
 
 
     public Answer(String input) {
         checkValidation(input);
-        this.values = Arrays.stream(input.split(""))
-                .map(Integer::parseInt)
-                .collect(Collectors.toList());
+        this.values = convertStringToIntegerList(input);
     }
 
     private static void checkValidation(String value) {
         checkLength(value);
         checkDuplicate(value);
         checkNumber(value);
+    }
+
+    private static List<Integer> createRandomIntegerListLimitNum() {
+        Set<Integer> set = new HashSet<>();
+        while (set.size() < LENGTH_LIMIT) {
+            set.add(pickNumberInRange(1, 9));
+        }
+        return set.stream().toList();
+    }
+
+    private static List<Integer> convertStringToIntegerList(String input) {
+        return Arrays.stream(input.split(""))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
     }
 
     private static void checkDuplicate(String value) {
@@ -81,12 +89,10 @@ public class Answer {
 
     public static int countContainElement(List<Integer> answerValues, List<Integer> inputValues) {
         int count = 0;
-        int index = 0;
         for (Integer value : answerValues) {
             if (inputValues.contains(value)) {
                 count++;
             }
-            index++;
         }
         return count;
     }
